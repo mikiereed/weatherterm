@@ -51,4 +51,19 @@ class WeatherComParser:
 
         return scraped_data
 
+    def _parse(self, container, criteria):
+        results = [self._get_data(item, criteria)
+                   for item in container.children]
+
+        return [result for result in results if result]
+
+    def _clear_str_number(self, str_number):
+        result = self._only_digits_regex.match(str_number)
+        return '--' if result is None else result.group()
+
+    def _get_additional_info(self, content):
+        data = tuple(item.td.span.get_text()
+                     for item in content.table.tbody.children)
+        return data[:2]
+
         
