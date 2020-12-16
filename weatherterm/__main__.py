@@ -16,10 +16,8 @@ def _validate_forecast_args(args):
 
 parsers = parser_loader.load('./weatherterm/parsers')
 
-argparser = ArgumentParser(
-    prog='weatherterm',
-    description='Weather info from weather.com on your terminal'
-)
+argparser = ArgumentParser(prog='weatherterm',
+                           description='Weather info from weather.com on your terminal')
 
 required = argparser.add_argument_group('required arguments')
 
