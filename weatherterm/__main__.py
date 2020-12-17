@@ -10,10 +10,11 @@ from weatherterm.core import SetUnitAction
 def _validate_forecast_args(args):
     if args.forecast_option is None:
         err_msg = ('One of these arguments must be used: '
-                    '-td/--today, -5d/--fivedays, -10d/--tendays, -w/--weekend')
+                   '-td/--today, -5d/--fivedays, -10d/--tendays, -w/--weekend')
         print(f'{argparser.prog}: error: {err_msg}',
-        file=sys.stderr)
+              file=sys.stderr)
         sys.exit()
+
 
 parsers = parser_loader.load('./weatherterm/parsers')
 
@@ -42,7 +43,7 @@ argparser.add_argument('-u', '--unit',
 required.add_argument('-a', '--areacode',
                       required=True,
                       dest='area_code',
-                      help=('The code area to get the weather broadcast from . '
+                      help=('The code area to get the weather broadcast from. '
                             'It can be obtained at https://weather.com'))
 
 argparser.add_argument('-v', '--version',

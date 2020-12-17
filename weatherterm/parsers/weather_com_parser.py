@@ -46,7 +46,7 @@ class WeatherComParser:
             result = container.find(value, class_=key)
 
             data = None if result is None else result.get_text()
-            
+
             if data is not None:
                 scraped_data[key] = data
 
@@ -108,5 +108,3 @@ class WeatherComParser:
                                description=weatherinfo['today_nowcard-phrase'])
 
         return [td_forecast]
-
-        
