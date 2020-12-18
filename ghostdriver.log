@@ -1,12 +1,12 @@
-[INFO  - 2020-12-18T16:22:12.220Z] GhostDriver - Main - running on port 64222
-[INFO  - 2020-12-18T16:22:15.761Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2020-12-18T16:22:15.761Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - page.customHeaders:  - {}
-[INFO  - 2020-12-18T16:22:15.761Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2020-12-18T16:22:15.761Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 312270c0-414d-11eb-9074-43fe8e0d016d
-[ERROR - 2020-12-18T16:22:17.187Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - page.onError - msg: ReferenceError: Can't find variable: WeakMap
+[INFO  - 2020-12-18T17:45:57.226Z] GhostDriver - Main - running on port 52512
+[INFO  - 2020-12-18T17:45:58.243Z] Session [e2c45fe0-4158-11eb-8235-f13cb4437161] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2020-12-18T17:45:58.243Z] Session [e2c45fe0-4158-11eb-8235-f13cb4437161] - page.customHeaders:  - {}
+[INFO  - 2020-12-18T17:45:58.243Z] Session [e2c45fe0-4158-11eb-8235-f13cb4437161] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2020-12-18T17:45:58.243Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: e2c45fe0-4158-11eb-8235-f13cb4437161
+[ERROR - 2020-12-18T17:45:59.577Z] Session [e2c45fe0-4158-11eb-8235-f13cb4437161] - page.onError - msg: ReferenceError: Can't find variable: WeakMap
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2020-12-18T16:22:17.187Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - page.onError - stack:
+[ERROR - 2020-12-18T17:45:59.577Z] Session [e2c45fe0-4158-11eb-8235-f13cb4437161] - page.onError - stack:
   (anonymous function) (https://ads.rubiconproject.com/prebid/10738_TWC.js:5)
   f (https://ads.rubiconproject.com/prebid/10738_TWC.js:5)
   (anonymous function) (https://ads.rubiconproject.com/prebid/10738_TWC.js:5)
@@ -26,20 +26,5 @@
   (anonymous function) (https://ads.rubiconproject.com/prebid/10738_TWC.js:5)
   f (https://ads.rubiconproject.com/prebid/10738_TWC.js:5)
   (anonymous function) (https://ads.rubiconproject.com/prebid/10738_TWC.js:5)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2020-12-18T16:22:18.232Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - page.onError - msg: Optly-μ is disabled due to an error.
-Error parsing request: Provided User-Agent is not recognized as a supported browser: "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1". Please ensure that you are forwarding the User-Agent from the client, and see here for more details about which browsers are supported: https://docs.developers.optimizely.com/performance-edge/docs/supported-browsers.
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2020-12-18T16:22:18.232Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - page.onError - stack:
-  (anonymous function) (https://weather.com/optimizely-edge/17941370450.js:4)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2020-12-18T16:22:18.235Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - page.onError - msg: Unhandled promise rejection TypeError: Type error
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2020-12-18T16:22:18.235Z] Session [312270c0-414d-11eb-9074-43fe8e0d016d] - page.onError - stack:
-  exports (https://weather.com/daybreak-today/assets/main.6c4992de38064a5cbfc1.js:2)
 
   phantomjs://platform/console++.js:263 in error

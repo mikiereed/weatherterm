@@ -107,9 +107,9 @@ class WeatherComParser:
 
     def _today_forecast(self, args):
         criteria = {
-            'today_nowcard-temp': 'div',
-            'today_nowcard-phrase': 'div',
-            'today_nowcard-hilo': 'div',
+            'CurrentConditions--tempValue--3KcTQ': 'span',
+            'CurrentConditions--phraseValue--2xXSr': 'div',
+            'CurrentConditions--tempHiLoValue--A4RQE': 'div',
         }
 
         content = self._request.fetch_data(args.forecast_option.value,
@@ -117,35 +117,39 @@ class WeatherComParser:
 
         bs = BeautifulSoup(content, 'html.parser')
 
-        container = bs.find('section', class_='today_nowcard-container')
+        container = bs.find('section', class_='card')
+
+        # print(container)
 
         weather_conditions = self._parse(container, criteria)
 
         if len(weather_conditions) < 1:
-            raise Exception('Could not parse weather foreecast for today.')
+            raise Exception('Could not parse weather forecast for today.')
 
         weatherinfo = weather_conditions[0]
+        # for weather in weather_conditions:
+        #     print(weather)
 
-        temp_regex = re.compile(('H\s+([0-9]+|\-{,2}).+'
-                                 'L\s+([0-9]+|\-{,2})'))
-        temp_info = temp_regex.search(weatherinfo['today_nowcard-hilo'])
+        temp_regex = re.compile(('([0-9]+|\-{,2}).+'
+                                 '/([0-9]+|\-{,2})'))
+        temp_info = temp_regex.search(weatherinfo['CurrentConditions--tempHiLoValue--A4RQE'])
         high_temp, low_temp = temp_info.groups()
 
-        side = container.find('div', class_='today_nowcard-sidecar')
-        wind, humidity = self._get_additional_info(side)
+        # side = container.find('div', class_='today_nowcard-sidecar')
+        # wind, humidity = self._get_additional_info(side)
 
-        curr_temp = self._clear_str_number(weatherinfo['today_nowcard-temp'])
+        curr_temp = self._clear_str_number(weatherinfo['CurrentConditions--tempValue--3KcTQ'])
 
         self._unit_converter.dest_unit = args.unit
 
         td_forecast = Forecast(self._unit_converter.convert(curr_temp),
-                               humidity,
-                               wind,
+                               humidity=0,
+                               wind=0,
                                high_temp=self._unit_converter.convert(
                                    high_temp),
                                low_temp=self._unit_converter.convert(
                                    low_temp),
-                               description=weatherinfo['today_nowcard-phrase'])
+                               description=weatherinfo['CurrentConditions--phraseValue--2xXSr'])
 
         return [td_forecast]
 
