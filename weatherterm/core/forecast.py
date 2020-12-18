@@ -1,5 +1,4 @@
 from datetime import date
-
 from .forecast_type import ForecastType
 
 
@@ -12,7 +11,7 @@ class Forecast:
             high_temp=None,
             low_temp=None,
             description='',
-            forcast_date=None,
+            forecast_date=None,
             forecast_type=ForecastType.TODAY):
         self._current_temp = current_temp
         self._high_temp = high_temp
@@ -26,7 +25,7 @@ class Forecast:
             self.forecast_date = date.today()
         else:
             self._forecast_date = forecast_date
-    
+
     @property
     def forecast_date(self):
         return self._forecast_date
@@ -63,9 +62,8 @@ class Forecast:
             temperature = (f'{offset}High {self._high_temp}\xb0 / '
                            f'Low {self._low_temp}\xb0 ')
 
-        return(f'>> {self.forecast_date}\n'
-               f'{temperature}'
-               f'({self._description})\n'
-               f'{offset}Wind: '
-               f'{self._wind} / Humidity: {self._humidity}\n')
-    
+        return (f'>> {self.forecast_date}\n'
+                f'{temperature}'
+                f'({self._description})\n'
+                f'{offset}Wind: '
+                f'{self._wind} / Humidity: {self._humidity}\n')

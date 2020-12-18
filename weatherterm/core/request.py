@@ -4,10 +4,11 @@ from selenium import webdriver
 
 class Request:
     def __init__(self, base_url):
-        self._phantomjs_path = os.path.join(os.curdir,
-                                            'phantomjs/bin/phantomjs')
+        self._driver_path = os.path.join(os.curdir, 'phantomjs\\bin\\phantomjs')
+        print(self._driver_path)
+        print(os.curdir)
         self._base_url = base_url
-        self._driver = webdriver.PhantomJS(self._phantomjs_path)
+        self._driver = webdriver.PhantomJS(self._driver_path)
 
     def fetch_data(self, forecast, area):
         url = self._base_url.format(forecast=forecast, area=area)
